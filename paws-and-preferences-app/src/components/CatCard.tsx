@@ -37,7 +37,7 @@ const CatCard: React.FC<CatCardProps> = ({ url, onSwipe, swipable = true }) => {
                 left: 0,
                 right: 0,
             }}
-            onDragEnd={(e, info) => {
+            onDragEnd={(_e, info) => {
                 if (!swipable || !onSwipe) return;
                 if (info.offset.x > 150) onSwipe?.("right");
                 else if (info.offset.x < -150) onSwipe?.("left");

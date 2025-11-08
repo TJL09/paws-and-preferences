@@ -22,7 +22,7 @@ const Summary: React.FC<SummaryProps> = ({ cats, amount }) => {
             justify-items-center
             ">
                 {cats.map((cat) => (
-                    <CatCard url={cat.imageUrl} id={cat.id} swipable={false}/>
+                    <CatCard url={cat.imageUrl} id={cat.id} swipable={false} key={cat.id}/>
                 ))}
             </div>
         </div>

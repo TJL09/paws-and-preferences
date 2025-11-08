@@ -14,7 +14,6 @@ function App() {
   const [loading, setLoading] = useState<boolean>(true);
   const [cats, setCats] = useState<Cat[]>([]);
   const [likedCats, setLikedCats] = useState<Cat[]>([]);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [dislikedCats, setDislikedCats] = useState<Cat[]>([]);
   const [remainingCats, setRemainingCats] = useState<Cat[]>(cats);
   const [showResults, setShowResults] = useState<boolean>(false);
@@ -54,8 +53,10 @@ function App() {
   useEffect(() => {
     if (remainingCats.length === 0 && cats.length > 0) {
       setShowResults(true);
+      console.log("Liked cats:", likedCats);
+      console.log("Disliked cats:", dislikedCats);
     }
-  }, [remainingCats, cats]);
+  }, [remainingCats, cats, likedCats, dislikedCats]);
 
   if (loading) {
     return (
